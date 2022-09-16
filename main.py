@@ -1,5 +1,6 @@
 import random
 
+
 destinations = ["Egypt", "Amsterdam", "Nairobi","Abu Dabi" ]
 resturants = ["Papadeaeuxs", "Lucas", "Grant Steakhouse", "Grillers"]
 transportations = ["Scooter", "Motorcycle", "Taxi", "Uber"]
@@ -14,18 +15,24 @@ def random_resturant():
 def random_transportation():
     print("Transportation: " + random.choice(transportations))
 
+
 def random_excursion():
     print("Excursion: " + random.choice(excursions))
 
-def satisfied_with_trip():
-    satisfied = input("Do you like the trip we have planned? Yes or No?")
-
-def run():
+def day_trip_Question():
     random_destination()
     random_resturant()
     random_transportation()
     random_excursion()
-    satisfied_with_trip()
 
-day_trip = run()
+day_trip = day_trip_Question()
 
+def satisfied_with_trip():
+    satisfied = input("Do you like the trip we have planned? Yes or No? ")
+    if satisfied == "Yes":
+        print(day_trip)
+    else:
+        day_trip_Question()
+        satisfied_with_trip()
+
+satisfied_with_trip()
