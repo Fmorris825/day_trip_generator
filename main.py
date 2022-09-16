@@ -6,14 +6,22 @@ transportations = ["Scooter", "Motorcycle", "Taxi", "Uber"]
 excursions = ["Zoo", "Aquarium", "Mountain Climbing", "Museum"]
 
 def random_destination():
-    random.choice(destinations)
+    print(random.choice(destinations))
 
 def random_resturant():
-    random.choice(resturants)
+    print(random.choice(resturants))
 
-def random_resturant():
-    random.choice(transportations)
+def random_transportation():
+    print(random.choice(transportations))
 
-def random_resturant():
-    random.choice(excursions)
+def random_excursion():
+    print(random.choice(excursions))
+
+def run():
+    random_destination()
+    random_resturant()
+    random_transportation()
+    random_excursion()
+
+
 
