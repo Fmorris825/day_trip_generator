@@ -37,14 +37,21 @@ d1 = random_destination()
 r1 = random_resturant()
 t1 =  random_transportation()
 e1 = random_excursion()
-day_trip = d1, r1, t1, e1
+day_trip = [d1, r1, t1, e1]
+
+def confirm_trip():
+    confirmation = input("Please type 'Confirm' if the trip looks complete. ")
+    if confirmation == "Confirm":
+        print (day_trip + [ 'Completed!'])
 
 def satisfied_with_trip():
     satisfied = input("Do you like the trip we have planned? Yes or No? ")
     if satisfied == "Yes":
         print(day_trip)
+        confirm_trip()
     else:
         day_trip_Question()
         satisfied_with_trip()
 
 satisfied_with_trip()
+
