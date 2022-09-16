@@ -37,3 +37,17 @@ Prompt the user to see if they are satisfied
 If not, find out which trip feature they want to change and randomly select a new feature.
 Keep doing this process until the user is satisfied with the trip
 Display the completed trip to the console.
+
+
+def random_destination():
+    print("Destination: " + random.choice(destinations))
+
+def random_resturant():
+    print("Resturant: " + random.choice(resturants))
+
+def random_transportation():
+    print("Transportation: " + random.choice(transportations))
+
+
+def random_excursion():
+    print("Excursion: " + random.choice(excursions))
