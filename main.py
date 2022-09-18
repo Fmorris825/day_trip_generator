@@ -1,4 +1,5 @@
 import random
+from tabnanny import check
 
 
 destinations = ["Egypt", "Amsterdam", "Nairobi","Abu Dabi" ]
@@ -33,29 +34,41 @@ def day_trip_Question():
     Excursion = random_excursion()
     return [Destination, Resturant, Transportation, Excursion]
     
-Destination = random_destination()
-Resturant = random_resturant()
-Transportation =  random_transportation()
-Excursion = random_excursion()
-day_trip = [Destination, Resturant, Transportation, Excursion]
+
+day_trip = day_trip_Question()
+print(day_trip)
 
 def confirm_trip():
     confirmation = input("Please type 'Confirm' if the trip looks complete. ")
+    confirmation2 = input("Would you like to Rerun the Day trip Generation or Confirm trip itnerary? Please Enter 'Confirm' or 'Rerun'. ")
     if confirmation == "Confirm":
-        print([random_destination(),random_resturant(),random_transportation(),random_excursion()] + [ 'Completed!'])
+        print(day_trip + [ 'Completed!'])
+    if confirmation2 == "Rerun":
+        rerun = day_trip_Question()
+        satisfied = input("Do you like the trip we have planned? Yes or No? ")
+        if satisfied == "Yes":
+            print(rerun)
+            confirmation = input("Please type 'Confirm' if the trip looks complete. ")
+            if confirmation == "Confirm":
+                print(rerun + [ 'Completed!'])
+    else:
+        confirm_trip()
+
 
 def satisfied_with_trip():
-
     satisfied = input("Do you like the trip we have planned? Yes or No? ")
     if satisfied == "Yes":
-        print(random_destination(),random_resturant(),random_transportation(),random_excursion())
-        confirm_trip()
+        print(day_trip)
     else:
-        random_destination()
-        random_resturant()
-        random_transportation()
-        random_excursion()
-        satisfied_with_trip()
-
+        rerun = day_trip_Question()
+        satisfied = input("Do you like the trip we have planned? Yes or No? ")
+        if satisfied == "Yes":
+            print(rerun)
+            confirmation = input("Please type 'Confirm' if the trip looks complete. ")
+            if confirmation == "Confirm":
+                print(rerun + [ 'Completed!'])
+        
+        
+  
 satisfied_with_trip()
-
+confirm_trip()
