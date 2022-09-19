@@ -36,14 +36,12 @@ def day_trip_Question():
     
 
 day_trip = day_trip_Question()
-print(day_trip)
 
 def confirm_trip():
-    confirmation = input("Please type 'Confirm' if the trip looks complete. ")
-    confirmation2 = input("Would you like to Rerun the Day trip Generation or Confirm trip itnerary? Please Enter 'Confirm' or 'Rerun'. ")
+    confirmation = input("Would you like to Rerun the Day trip Generation or Confirm trip itnerary? Please Enter 'Confirm' or 'Rerun'. ")
     if confirmation == "Confirm":
         print(day_trip + [ 'Completed!'])
-    if confirmation2 == "Rerun":
+    elif confirmation == "Rerun":
         rerun = day_trip_Question()
         satisfied = input("Do you like the trip we have planned? Yes or No? ")
         if satisfied == "Yes":
